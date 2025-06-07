@@ -25,6 +25,7 @@ import {
     Redis,
 } from '@fiora/database/redis/initRedis';
 import client from '../../../config/client';
+import { registerSensitiveWords, sanitize } from '../../../shared/sensitiveWordFilter';
 
 const { isValid } = Types.ObjectId;
 
@@ -115,6 +116,8 @@ export async function sendMessage(ctx: Context<SendMessageData>) {
 
     let messageContent = content;
     if (type === 'text') {
+        // 通用敏感词过滤
+        messageContent = sanitize(messageContent);
         assert(messageContent.length <= 2048, '消息长度过长');
 
         const rollRegex = /^-roll( ([0-9]*))?$/;

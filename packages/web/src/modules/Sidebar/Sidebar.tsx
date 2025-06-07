@@ -131,26 +131,7 @@ function Sidebar() {
                             />
                         </a>
                     </Tooltip>
-                    {renderTooltip(
-                        '下载APP',
-                        <IconButton
-                            width={40}
-                            height={40}
-                            icon="app"
-                            iconSize={28}
-                            onClick={() => toggleDownloadDialogVisible(true)}
-                        />,
-                    )}
-                    {renderTooltip(
-                        '打赏',
-                        <IconButton
-                            width={40}
-                            height={40}
-                            icon="dashang"
-                            iconSize={26}
-                            onClick={() => toggleRewardDialogVisible(true)}
-                        />,
-                    )}
+                    {/* Unused code removed */}
                     {renderTooltip(
                         '关于',
                         <IconButton

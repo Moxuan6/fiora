@@ -10,4 +10,4 @@ RUN yarn install
 
 RUN yarn build:web
 
-CMD yarn start
+CMD ["yarn", "start"]
